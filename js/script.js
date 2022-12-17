@@ -20,7 +20,7 @@ console.log(maquina)
 
 confirmNumber.addEventListener("click", function () {
     if (inputUser.value != '') {
-        if (inputUser.value <= 10) {
+        if (inputUser.value <= 10 && inputUser.value > 0) {
             console.log(contadorPerdidas)
             if (maquina == inputUser.value) {
                 if (ayuda == false) {
@@ -96,16 +96,24 @@ confirmNumber.addEventListener("click", function () {
                         ayuda = true
                         input0()
                     }
+                    if (contadorPerdidas >= 18) {
+                        showNumber.innerText = "Es pelotudo? :|"
+                        showNumber.style.color = 'orange'
+                        input0()
+                    }
                 }
             }
         } else {
             contadorMayor10++;
-            if (contadorMayor10 < 5) {
+            if (contadorMayor10 < 5 && inputUser.value > 0) {
                 showNumber.innerText = "El número tiene que ser menor a 10!!!"
                 showNumber.style.color = 'red'
             } else {
                 showNumber.innerText = "Vas a seguir insistiendo?"
                 showNumber.style.color = 'gray'
+            }
+            if (inputUser.value <= 0) {
+                showNumber.innerText = "El número tiene que ser mayor a 1!!!"
             }
         }
     } else {
