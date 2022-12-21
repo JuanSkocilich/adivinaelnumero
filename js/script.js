@@ -97,7 +97,7 @@ confirmNumber.addEventListener("click", function () {
                         input0()
                     }
                     if (contadorPerdidas >= 18) {
-                        showNumber.innerText = "Es pelotudo? :|"
+                        showNumber.innerText = "Sos pelotudo? :|"
                         showNumber.style.color = 'orange'
                         input0()
                     }
